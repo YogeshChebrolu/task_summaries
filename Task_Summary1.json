@@ -1,63 +1,113 @@
-#TASK_URL = https://app-dev.kairos.computer/dashboard/yogesh/tasks/b94c0907-83d6-41cd-bbfb-a3a4fd896bcb/runs?runId=22770be0-eba0-4afc-aa32-a768621822b9
+#TASK_URL = https://app-dev.kairos.computer/dashboard/yogesh/tasks/b94c0907-83d6-41cd-bbfb-a3a4fd896bcb/runs?runId=d39dc77f-c888-4a59-a618-e2ad286f7cea
 
 {
     "task_name": "Stock Research and Google Doc Creation",
     "task_description": "1. Take the provided stock tickers as input\n2. Research each stock ticker, gathering information such as:\n   - Current stock price and recent performance\n   - Company overview and business model\n   - Key financial metrics (market cap, P/E ratio, revenue, etc.)\n   - Recent news and analyst opinions\n   - Industry trends and competitive landscape\n3. Create a new Google Doc using the PaySwift account\n4. Format the research findings in a structured document with:\n   - Executive summary\n   - Individual stock analysis sections\n   - Key findings and recommendations\n   - Data sources and timestamp\n5. Save the document with a descriptive title including the date",
     "connected_apps": [
-        "BROWSER_AGENT"
+        "GOOGLEDOCS"
     ],
-    "analysis_timestamp": "2025-07-17T10:01:07.698907+00:00",
+    "analysis_timestamp": "2025-07-17T11:32:03.454775+00:00",
     "success": false,
     "execution_assessment": "PARTIAL_SUCCESS",
-    "total_batches": 1,
-    "total_messages": 4,
-    "total_tool_calls": 1,
+    "total_batches": 4,
+    "total_messages": 16,
+    "total_tool_calls": 24,
     "errors_found": [
         {
-            "type": "tool_failure",
-            "reason": "The BROWSER_AGENT task was stopped prematurely, failing to gather the requested stock information for Google (GOOG). This prevents the workflow from progressing towards the goal of researching and documenting stock information.",
-            "location": "toolu_01G1buUaFkeEfCoVfrpqsD3a"
+            "type": "API_ERROR",
+            "reason": "The COMPOSIO_SEARCH_FINANCE_SEARCH tool failed to return any results for the query about Apple's stock price, market cap, P/E ratio, and revenue. This prevents the agent from gathering key financial metrics for the stock analysis.",
+            "location": "COMPOSIO_SEARCH_FINANCE_SEARCH"
+        },
+        {
+            "type": "finance_search_failure",
+            "reason": "Google Finance search failed to return any results for the query related to Tesla's stock price, current performance, financial metrics, market cap, P/E ratio, and revenue. This prevents the agent from gathering key financial data for the stock analysis.",
+            "location": "toolu_01H3NkHLsiwLA4E2f1WpNzN2"
         }
     ],
     "warnings": [],
-    "error_count": 1,
+    "error_count": 2,
     "warning_count": 0,
     "tool_call_analysis": {
-        "total_calls": 1,
-        "successful_calls": 1,
+        "total_calls": 24,
+        "successful_calls": 24,
         "failed_calls": 0,
         "success_rate_percent": 100.0,
         "tool_stats": {
-            "BROWSER_AGENT": 1
+            "COMPOSIO_SEARCH_AGENT": 3,
+            "COMPOSIO_SEARCH_FINANCE_SEARCH": 3,
+            "COMPOSIO_SEARCH_NEWS_SEARCH": 3,
+            "COMPOSIO_SEARCH_SEARCH": 10,
+            "COMPOSIO_SEARCH_TAVILY_SEARCH": 3,
+            "GOOGLEDOCS_AGENT": 1,
+            "GOOGLEDOCS_CREATE_DOCUMENT_MARKDOWN": 1
         },
         "orchestrator_invocations_summary": [
             {
-                "worker_agent": "BROWSER_AGENT",
+                "worker_agent": "COMPOSIO_SEARCH_AGENT",
                 "tool_usage_counts": {
-                    "BROWSER_AGENT": 1
+                    "COMPOSIO_SEARCH_FINANCE_SEARCH": 3,
+                    "COMPOSIO_SEARCH_NEWS_SEARCH": 3,
+                    "COMPOSIO_SEARCH_SEARCH": 4,
+                    "COMPOSIO_SEARCH_TAVILY_SEARCH": 2
                 },
-                "total_invocations": 1
+                "total_invocations": 12
+            },
+            {
+                "worker_agent": "GOOGLEDOCS_AGENT",
+                "tool_usage_counts": {
+                    "GOOGLEDOCS_CREATE_DOCUMENT_MARKDOWN": 2
+                },
+                "total_invocations": 2
             }
         ],
         "failed_tool_calls": []
     },
     "batch_summaries": [
         {
-            "batch_index": 0,
-            "assessment": "FAILED",
+            "batch_index": 1,
+            "assessment": "SUCCESSFUL",
+            "errors": 0,
+            "warnings": 0,
+            "summary": "The agent successfully researched the stock tickers and created a Google Doc with the research findings."
+        },
+        {
+            "batch_index": 2,
+            "assessment": "PARTIAL",
             "errors": 1,
             "warnings": 0,
-            "summary": "The BROWSER_AGENT failed to retrieve stock information for Google, halting the stock research and Google Doc creation process."
+            "summary": "The batch is partial because the finance search failed to return any results, hindering the collection of key financial metrics for Apple's stock analysis, while other searches were successful."
+        },
+        {
+            "batch_index": 3,
+            "assessment": "PARTIAL",
+            "errors": 1,
+            "warnings": 0,
+            "summary": "The finance search failed to retrieve data for Tesla, but news and general searches were successful, leading to a partial completion of the data gathering for the stock analysis."
+        },
+        {
+            "batch_index": 3,
+            "assessment": "SUCCESSFUL",
+            "errors": 0,
+            "warnings": 0,
+            "summary": "The Google Doc was successfully created and formatted with the provided stock research report content."
         }
     ],
-    "successful_operations": [],
-    "failed_operations": [
-        "BROWSER_AGENT"
+    "successful_operations": [
+        "COMPOSIO_SEARCH_FINANCE_SEARCH",
+        "COMPOSIO_SEARCH_AGENT",
+        "GOOGLEDOCS_AGENT",
+        "COMPOSIO_SEARCH_NEWS_SEARCH",
+        "COMPOSIO_SEARCH_SEARCH",
+        "GOOGLEDOCS_CREATE_DOCUMENT_MARKDOWN",
+        "COMPOSIO_SEARCH_TAVILY_SEARCH"
     ],
-    "summary": "Task 'Stock Research and Google Doc Creation' processed 4 messages over 1 batches, made 1 tool calls (100.0% success), and invoked 1 worker agents. Found 1 errors and 0 warnings. Overall status: PARTIAL_SUCCESS.",
-    "task_url": "https://app-dev.kairos.computer/dashboard/yogesh/tasks/b94c0907-83d6-41cd-bbfb-a3a4fd896bcb/runs?runId=22770be0-eba0-4afc-aa32-a768621822b9",
+    "failed_operations": [
+        "COMPOSIO_SEARCH_FINANCE_SEARCH"
+    ],
+    "summary": "Task 'Stock Research and Google Doc Creation' processed 16 messages over 4 batches, made 24 tool calls (100.0% success), and invoked 2 worker agents. Found 2 errors and 0 warnings. Overall status: PARTIAL_SUCCESS.",
+    "task_url": "https://app-dev.kairos.computer/dashboard/yogesh/tasks/b94c0907-83d6-41cd-bbfb-a3a4fd896bcb/runs?runId=d39dc77f-c888-4a59-a618-e2ad286f7cea",
     "task_id": "b94c0907-83d6-41cd-bbfb-a3a4fd896bcb",
-    "task_run_id": "22770be0-eba0-4afc-aa32-a768621822b9",
+    "task_run_id": "d39dc77f-c888-4a59-a618-e2ad286f7cea",
     "analysis_method": "LLM for message batches",
     "batch_token_limit": 50000
 }
