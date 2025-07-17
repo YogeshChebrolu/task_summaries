@@ -1,0 +1,63 @@
+#TASK_URL = https://app-dev.kairos.computer/dashboard/yogesh/tasks/b94c0907-83d6-41cd-bbfb-a3a4fd896bcb/runs?runId=22770be0-eba0-4afc-aa32-a768621822b9
+
+{
+    "task_name": "Stock Research and Google Doc Creation",
+    "task_description": "1. Take the provided stock tickers as input\n2. Research each stock ticker, gathering information such as:\n   - Current stock price and recent performance\n   - Company overview and business model\n   - Key financial metrics (market cap, P/E ratio, revenue, etc.)\n   - Recent news and analyst opinions\n   - Industry trends and competitive landscape\n3. Create a new Google Doc using the PaySwift account\n4. Format the research findings in a structured document with:\n   - Executive summary\n   - Individual stock analysis sections\n   - Key findings and recommendations\n   - Data sources and timestamp\n5. Save the document with a descriptive title including the date",
+    "connected_apps": [
+        "BROWSER_AGENT"
+    ],
+    "analysis_timestamp": "2025-07-17T10:01:07.698907+00:00",
+    "success": false,
+    "execution_assessment": "PARTIAL_SUCCESS",
+    "total_batches": 1,
+    "total_messages": 4,
+    "total_tool_calls": 1,
+    "errors_found": [
+        {
+            "type": "tool_failure",
+            "reason": "The BROWSER_AGENT task was stopped prematurely, failing to gather the requested stock information for Google (GOOG). This prevents the workflow from progressing towards the goal of researching and documenting stock information.",
+            "location": "toolu_01G1buUaFkeEfCoVfrpqsD3a"
+        }
+    ],
+    "warnings": [],
+    "error_count": 1,
+    "warning_count": 0,
+    "tool_call_analysis": {
+        "total_calls": 1,
+        "successful_calls": 1,
+        "failed_calls": 0,
+        "success_rate_percent": 100.0,
+        "tool_stats": {
+            "BROWSER_AGENT": 1
+        },
+        "orchestrator_invocations_summary": [
+            {
+                "worker_agent": "BROWSER_AGENT",
+                "tool_usage_counts": {
+                    "BROWSER_AGENT": 1
+                },
+                "total_invocations": 1
+            }
+        ],
+        "failed_tool_calls": []
+    },
+    "batch_summaries": [
+        {
+            "batch_index": 0,
+            "assessment": "FAILED",
+            "errors": 1,
+            "warnings": 0,
+            "summary": "The BROWSER_AGENT failed to retrieve stock information for Google, halting the stock research and Google Doc creation process."
+        }
+    ],
+    "successful_operations": [],
+    "failed_operations": [
+        "BROWSER_AGENT"
+    ],
+    "summary": "Task 'Stock Research and Google Doc Creation' processed 4 messages over 1 batches, made 1 tool calls (100.0% success), and invoked 1 worker agents. Found 1 errors and 0 warnings. Overall status: PARTIAL_SUCCESS.",
+    "task_url": "https://app-dev.kairos.computer/dashboard/yogesh/tasks/b94c0907-83d6-41cd-bbfb-a3a4fd896bcb/runs?runId=22770be0-eba0-4afc-aa32-a768621822b9",
+    "task_id": "b94c0907-83d6-41cd-bbfb-a3a4fd896bcb",
+    "task_run_id": "22770be0-eba0-4afc-aa32-a768621822b9",
+    "analysis_method": "LLM for message batches",
+    "batch_token_limit": 50000
+}
