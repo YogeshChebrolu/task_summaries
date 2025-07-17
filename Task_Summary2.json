@@ -1,0 +1,63 @@
+#TASK_URL = https://app-dev.kairos.computer/dashboard/yogesh/tasks/4c0e48c4-614a-4fe2-9586-6905393026e6/runs?runId=2c9571c8-0dc8-4a23-8ed4-f14a3621447c
+{
+    "task_name": "Extract Company and Founder Information from Y Combinator",
+    "task_description": "1. Navigate to ycombinator.com/companies in the browser.\n2. Click the checkbox next to \"Summer 2025\" under the \"Batch\" section.\n3. Iterate through the first five companies listed.\n4. For each company:\n   a. Click on the company name to navigate to its page.\n   b. Extract the company description from the page.\n   c. Extract the names of the founders listed on the page.\n5. Output the extracted company descriptions and founder names for each of the first five companies.",
+    "connected_apps": [
+        "BROWSER_AGENT"
+    ],
+    "analysis_timestamp": "2025-07-17T10:12:08.106143+00:00",
+    "success": true,
+    "execution_assessment": "SUCCESSFUL",
+    "total_batches": 1,
+    "total_messages": 26,
+    "total_tool_calls": 1,
+    "errors_found": [],
+    "warnings": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "tool_call_analysis": {
+        "total_calls": 1,
+        "successful_calls": 1,
+        "failed_calls": 0,
+        "success_rate_percent": 100.0,
+        "tool_stats": {
+            "BROWSER_AGENT": 1
+        },
+        "orchestrator_invocations_summary": [
+            {
+                "worker_agent": "BROWSER_AGENT",
+                "tool_usage_counts": {
+                    "BROWSER_AGENT": 1
+                },
+                "total_invocations": 1
+            }
+        ],
+        "failed_tool_calls": []
+    },
+    "batch_summaries": [
+        {
+            "batch_index": 1,
+            "assessment": "SUCCESSFUL",
+            "errors": 0,
+            "warnings": 0,
+            "summary": "The orchestrator successfully used the browser agent to navigate to the Y Combinator companies page, filter for the Summer 2025 batch, and extract the company description and founder names for the first five companies listed."
+        }
+    ],
+    "successful_operations": [
+        "Identify the first five companies listed after applying this filter",
+        "Extract all founder names listed on the page",
+        "Return to the main companies list to proceed to the next company",
+        "Click on the company name to navigate to its detailed page",
+        "Navigate to ycombinator.com/companies",
+        "Extract the company description from the page",
+        "Click the checkbox next to \"Summer 2025\" under the \"Batch\" section",
+        "Extract information for all first five companies from the Summer 2025 batch."
+    ],
+    "failed_operations": [],
+    "summary": "Task 'Extract Company and Founder Information from Y Combinator' processed 26 messages over 1 batches, made 1 tool calls (100.0% success), and invoked 1 worker agents. Found 0 errors and 0 warnings. Overall status: SUCCESSFUL.",
+    "task_url": "https://app-dev.kairos.computer/dashboard/yogesh/tasks/4c0e48c4-614a-4fe2-9586-6905393026e6/runs?runId=2c9571c8-0dc8-4a23-8ed4-f14a3621447c",
+    "task_id": "4c0e48c4-614a-4fe2-9586-6905393026e6",
+    "task_run_id": "2c9571c8-0dc8-4a23-8ed4-f14a3621447c",
+    "analysis_method": "LLM for message batches",
+    "batch_token_limit": 50000
+}
