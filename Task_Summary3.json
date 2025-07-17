@@ -1,0 +1,81 @@
+#TASK_URL: https://app-dev.kairos.computer/dashboard/yogesh/tasks/b6d7b9a8-7d51-4bbe-ae7d-76e3bd776ad2/runs?runId=42e2c0e3-6694-44cd-a415-b8cacaacf298
+{
+    "task_name": "most important news",
+    "task_description": "create a google sheet of the most important hackernews for today",
+    "connected_apps": [
+        "GOOGLESHEETS_AGENT",
+        "HACKERNEWS_AGENT"
+    ],
+    "analysis_timestamp": "2025-07-17T10:19:06.131476+00:00",
+    "success": true,
+    "execution_assessment": "SUCCESSFUL",
+    "total_batches": 1,
+    "total_messages": 12,
+    "total_tool_calls": 9,
+    "errors_found": [],
+    "warnings": [],
+    "error_count": 0,
+    "warning_count": 0,
+    "tool_call_analysis": {
+        "total_calls": 9,
+        "successful_calls": 9,
+        "failed_calls": 0,
+        "success_rate_percent": 100.0,
+        "tool_stats": {
+            "HACKERNEWS_AGENT": 1,
+            "HACKERNEWS_GET_TODAYS_POSTS": 2,
+            "HACKERNEWS_GET_FRONTPAGE": 1,
+            "GOOGLESHEETS_AGENT": 1,
+            "GOOGLESHEETS_CREATE_GOOGLE_SHEET1": 1,
+            "GOOGLESHEETS_BATCH_UPDATE": 2,
+            "GOOGLESHEETS_FORMAT_CELL": 1
+        },
+        "orchestrator_invocations_summary": [
+            {
+                "worker_agent": "HACKERNEWS_AGENT",
+                "tool_usage_counts": {
+                    "HACKERNEWS_AGENT": 1,
+                    "HACKERNEWS_GET_TODAYS_POSTS": 2,
+                    "HACKERNEWS_GET_FRONTPAGE": 1
+                },
+                "total_invocations": 4
+            },
+            {
+                "worker_agent": "GOOGLESHEETS_AGENT",
+                "tool_usage_counts": {
+                    "GOOGLESHEETS_AGENT": 1,
+                    "GOOGLESHEETS_CREATE_GOOGLE_SHEET1": 1,
+                    "GOOGLESHEETS_BATCH_UPDATE": 2,
+                    "GOOGLESHEETS_FORMAT_CELL": 1
+                },
+                "total_invocations": 5
+            }
+        ],
+        "failed_tool_calls": []
+    },
+    "batch_summaries": [
+        {
+            "batch_index": 0,
+            "assessment": "SUCCESSFUL",
+            "errors": 0,
+            "warnings": 0,
+            "summary": "The agent successfully created a Google Sheet with the most important Hacker News stories for the day, including formatting and sorting as requested."
+        }
+    ],
+    "successful_operations": [
+        "HACKERNEWS_GET_TODAYS_POSTS",
+        "HACKERNEWS_GET_FRONTPAGE",
+        "GOOGLESHEETS_AGENT",
+        "GOOGLESHEETS_BATCH_UPDATE",
+        "HACKERNEWS_AGENT",
+        "GOOGLESHEETS_CREATE_GOOGLE_SHEET1",
+        "GOOGLESHEETS_FORMAT_CELL"
+    ],
+    "failed_operations": [],
+    "summary": "Task 'most important news' processed 12 messages over 1 batches, made 9 tool calls (100.0% success), and invoked 2 worker agents. Found 0 errors and 0 warnings. Overall status: SUCCESSFUL.",
+    "task_url": "https://app-dev.kairos.computer/dashboard/yogesh/tasks/b6d7b9a8-7d51-4bbe-ae7d-76e3bd776ad2/runs?runId=42e2c0e3-6694-44cd-a415-b8cacaacf298",
+    "task_id": "b6d7b9a8-7d51-4bbe-ae7d-76e3bd776ad2",
+    "task_run_id": "42e2c0e3-6694-44cd-a415-b8cacaacf298",
+    "analysis_method": "LLM for message batches",
+    "batch_token_limit": 50000
+}
